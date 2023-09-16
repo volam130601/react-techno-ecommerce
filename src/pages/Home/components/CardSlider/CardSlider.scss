@@ -1,0 +1,40 @@
+@import "/src/common-scss/common-styles.scss";
+.dragging {
+  cursor: grabbing;
+}
+.card-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  .slider-arrow {
+    height: 50px;
+    position: absolute;
+    top: -80px;
+    right: 0;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      border: none;
+      border-radius: 50%;
+      background-color: $secondary-color;
+      &:hover {
+        background-color: $gray-color;
+      }
+    }
+  }
+}
+
+.cards-container {
+  display: flex;
+  overflow-x: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.active {
+  transform: scale(1.1);
+}

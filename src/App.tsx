@@ -1,5 +1,4 @@
 import { Header } from "./components";
-import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { About, Contact, Home, SignUp } from "./pages";
 function App() {

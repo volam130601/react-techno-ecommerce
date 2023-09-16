@@ -1,3 +1,4 @@
-import Sidebar from "./Sidebar/Sidebar";
-import Carousels from "./Carousels/Carousels";
-export { Sidebar, Carousels };
+import NavDropdown from "./NavDropdown/NavDropdown";
+import CardSlider from "./CardSlider/CardSlider";
+
+export { NavDropdown, CardSlider };

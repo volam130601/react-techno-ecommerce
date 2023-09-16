@@ -1,6 +1,6 @@
 import { Nav } from "react-bootstrap";
 import "./Sidebar.scss";
-import CustomNavDropdown from "./NavDropdown";
+import { NavDropdown } from "../../components";
 
 interface Category {
   id: string;
@@ -74,7 +74,7 @@ const Sidebar = () => {
       {categoriesData.length > 0 &&
         categoriesData.map((category) =>
           category.isDropdown === true ? (
-            <CustomNavDropdown
+            <NavDropdown
               key={category.id}
               title={category.title}
               items={services}
