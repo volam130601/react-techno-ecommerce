@@ -1,0 +1,11 @@
+#custom-nav-dropdown {
+  color: black !important;
+  display: flex;
+  align-items: center !important;
+  &::after {
+    margin-left: auto;
+  }
+}
+.dropdown-menu {
+  width: 100%;
+}

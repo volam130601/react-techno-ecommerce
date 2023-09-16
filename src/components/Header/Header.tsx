@@ -12,10 +12,13 @@ import {
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import "./Header.scss";
+import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
+import "./Header.scss";
 
 function Header() {
+  const NavBarItem = ["Home", "Contact", "About", "Sign Up"];
+
   return (
     <>
       {/* Header Top */}
@@ -56,18 +59,19 @@ function Header() {
           </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-6 nav-link">
-              <Nav.Link href="#home" className="px-4 mx-1 nav-item ">
-                Home
-              </Nav.Link>
-              <Nav.Link href="#contact" className="px-4 mx-1 nav-item">
-                Contact
-              </Nav.Link>
-              <Nav.Link href="#About" className="px-4 mx-1 nav-item">
-                About
-              </Nav.Link>
-              <Nav.Link href="#Sign Up" className="px-4 mx-1 nav-item">
-                Sign Up
-              </Nav.Link>
+              {NavBarItem.map((item) => (
+                <NavLink
+                  key={item}
+                  to={item == "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "active px-4 mx-1 nav-item"
+                      : "px-4 mx-1 nav-item"
+                  }
+                >
+                  {item}
+                </NavLink>
+              ))}
             </Nav>
           </Navbar.Collapse>
           <Form>

@@ -1,0 +1,15 @@
+.nav {
+  .nav-item {
+    color: black !important;
+  }
+}
+.nav-dropdown a {
+  color: black;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    margin-left: auto;
+    content: "";
+  }
+}
