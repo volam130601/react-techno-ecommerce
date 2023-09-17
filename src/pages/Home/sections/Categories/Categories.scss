@@ -1,0 +1,36 @@
+@import "/src/common-scss/common-styles";
+
+.slider-arrow {
+  height: 50px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    &:hover {
+      background-color: $gray-color;
+    }
+  }
+}
+
+.custom-badge {
+  display: block;
+  width: 20px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 16px;
+  background: $primary-color;
+}
+
+.card-category {
+  &:active,
+  &:hover {
+    background: $primary-color;
+    cursor: pointer;
+    color: white;
+  }
+}

@@ -7,10 +7,10 @@ const FlashSale = () => {
   return (
     <>
       <Container>
-        <Col className="mb-2 d-flex align-items-center text-primary-2 fw-bold">
+        <div className="mb-2 d-flex align-items-center text-primary-2 fw-bold">
           <span className="custom-badge"></span>
           Today's
-        </Col>
+        </div>
         <Row className="section-content align-items-end mx-0">
           <Col md={3} className="title p-0">
             <h1 className="m-0">Flash Sales</h1>

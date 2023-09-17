@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Sidebar, Carousels, FlashSale } from "./sections";
+import { Sidebar, Carousels, FlashSale, Categories } from "./sections";
 import "./Home.scss";
 const Home = () => {
   return (
@@ -16,6 +16,9 @@ const Home = () => {
         </Row>
         <Row className="mt-6">
           <FlashSale />
+        </Row>
+        <Row className="mt-6">
+          <Categories />
         </Row>
         <hr />
         <Row className="mt-6">Browse By Category</Row>

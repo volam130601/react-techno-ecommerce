@@ -38,18 +38,6 @@ function CardSlider() {
     }
   };
 
-  const handleMouseWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (cardContainerRef.current) {
-      const scrollAmount = 50;
-      if (e.deltaY > 0) {
-        cardContainerRef.current.scrollLeft += scrollAmount;
-      } else {
-        cardContainerRef.current.scrollLeft -= scrollAmount;
-      }
-      setScrollLeft(cardContainerRef.current.scrollLeft);
-    }
-  };
-
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     dragStartXRef.current = e.clientX;
@@ -79,7 +67,6 @@ function CardSlider() {
       <div
         className="cards-container"
         ref={cardContainerRef}
-        onWheel={handleMouseWheel}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
       >
