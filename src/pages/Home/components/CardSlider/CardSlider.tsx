@@ -71,7 +71,7 @@ function CardSlider() {
         onMouseUp={handleMouseUp}
       >
         {cardData.map((card, index) => (
-          <CustomCard key={index} />
+          <CustomCard key={index} isBadgeDiscount={true} />
         ))}
       </div>
       <div className="d-flex slider-arrow">

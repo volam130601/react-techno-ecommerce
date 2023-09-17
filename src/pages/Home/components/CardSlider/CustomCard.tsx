@@ -1,19 +1,23 @@
 import { AiOutlineHeart, AiOutlineEye, AiFillStar } from "react-icons/ai";
 import "./CustomCard.scss";
-// interface CardProps {
-//   title: string;
-// }
 
-function CustomCard() {
+interface CustomCardProps {
+  isBadgeDiscount: boolean;
+}
+
+const CustomCard: React.FC<CustomCardProps> = ({ isBadgeDiscount = true }) => {
   return (
-    <div className="custom-card">
+    <div className="custom-card me-4">
       <div className="custom-card-header">
         <img
           src="https://wpimg.pixelied.com/blog/wp-content/uploads/2021/06/15134504/Spotify-Cover-Art-with-Text-Aligned-480x480.png"
           alt=""
           className="card-image"
         />
-        <span className="custom-badge event-none">- 40%</span>
+        {isBadgeDiscount === true && (
+          <span className="custom-badge event-none">- 40%</span>
+        )}
+
         <div className="d-flex flex-column icon-btn justify-content-center align-items-center">
           <button className="btn-heart">
             <AiOutlineHeart />
@@ -45,6 +49,6 @@ function CustomCard() {
       </div>
     </div>
   );
-}
+};
 
 export default CustomCard;
