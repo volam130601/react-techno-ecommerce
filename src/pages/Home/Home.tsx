@@ -5,7 +5,6 @@ import BestSellProduct from "./sections/BestSellProduct/BestSellProduct";
 const Home = () => {
   return (
     <>
-      <hr />
       <Container>
         <Row>
           <Col xs={3}>
@@ -24,12 +23,7 @@ const Home = () => {
         <Row className="mt-6">
           <BestSellProduct />
         </Row>
-        <hr />
-        <Row className="mt-6">Browse By Category</Row>
-        <hr />
-        <Row className="mt-6">Best Selling Products</Row>
       </Container>
-      <div className="m-5">Footer</div>
     </>
   );
 };

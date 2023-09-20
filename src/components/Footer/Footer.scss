@@ -1,0 +1,47 @@
+@import "/src/common-scss/common-styles.scss";
+
+.footer-icon {
+  background: #000;
+  color: white;
+  padding: 8px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #ddd;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+}
+.footer-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 6px 40px 6px 12px;
+    color: white;
+  }
+  .icon {
+    position: absolute;
+    right: 8px;
+  }
+}
+
+.btn-link-app {
+  .google-play {
+    background-color: transparent;
+  }
+}
