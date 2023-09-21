@@ -1,15 +1,4 @@
-import {
-  Container,
-  Row,
-  Col,
-  Nav,
-  Navbar,
-  Form,
-  Button,
-  InputGroup,
-  FormControl,
-  Dropdown,
-} from "react-bootstrap";
+import { Container, Row, Col, Nav, Navbar, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
@@ -74,22 +63,21 @@ function Header() {
               ))}
             </Nav>
           </Navbar.Collapse>
-          <Form>
-            <InputGroup>
-              <FormControl
-                className="py-1 bg-light"
-                type="search"
-                id="form1"
-                placeholder="What are you looking for?
-                "
-              />
-              <InputGroup.Text className="">
-                <Button variant="primary" type="button">
-                  <FontAwesomeIcon icon={faSearch} />
-                </Button>
-              </InputGroup.Text>
-            </InputGroup>
-          </Form>
+          <div className="input-group" style={{ width: "300px" }}>
+            <input
+              className="form-control border-end-0 border"
+              type="search"
+              id="example-search-input"
+            />
+            <span className="input-group-append">
+              <button
+                className="btn btn-outline-secondary border-start-0 border rounded-0 rounded-end"
+                type="button"
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+            </span>
+          </div>
           <Nav.Link className="mx-3">
             <AiOutlineHeart className="fs-4" />
           </Nav.Link>

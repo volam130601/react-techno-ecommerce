@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { BsCarFront, BsSnapchat } from "react-icons/bs";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
@@ -6,7 +5,11 @@ import { LuShieldCheck } from "react-icons/lu";
 import { FaFacebookF } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { BiLogoLinkedin } from "react-icons/bi";
-import { AiOutlineSend, AiFillApple } from "react-icons/ai";
+import {
+  AiOutlineSend,
+  AiFillApple,
+  AiOutlineCopyrightCircle,
+} from "react-icons/ai";
 import "./Footer.scss";
 const Footer = () => {
   return (
@@ -36,11 +39,7 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
-      <Container
-        fluid
-        className="bg-dark text-white mt-5"
-        style={{ height: "500px" }}
-      >
+      <Container fluid className="bg-dark text-white mt-5">
         <Row className="p-5">
           <Col>
             <div className="fs-4 fw-bold mb-3">Exclusive</div>
@@ -117,6 +116,12 @@ const Footer = () => {
               <BiLogoLinkedin className="fs-4" />
             </Col>
           </Col>
+        </Row>
+        <Row className="border-top border-secondary ">
+          <div className="text-secondary d-flex justify-content-center my-2 align-items-center">
+            <AiOutlineCopyrightCircle /> Copyright Rimel 2022. All right
+            reserved
+          </div>
         </Row>
       </Container>
     </>
