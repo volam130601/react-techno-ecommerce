@@ -45,11 +45,8 @@ const Categories = () => {
         </Row>
         <Row className="my-5">
           {categoriesData.map((category, index) => (
-            <Col>
-              <div
-                key={index}
-                className="card card-category d-flex align-items-center py-5 "
-              >
+            <Col key={index}>
+              <div className="card card-category d-flex align-items-center py-5 ">
                 <category.icon className="fs-2" />
                 <span className="mt-2">{category.name}</span>
               </div>

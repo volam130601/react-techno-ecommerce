@@ -53,9 +53,9 @@ function Header() {
           <Col md="5">
             <Navbar.Collapse>
               <Nav className="nav-link">
-                {NavBarItem.map((item) => (
+                {NavBarItem.map((item, index) => (
                   <NavLink
-                    key={item}
+                    key={index}
                     to={item == "Home" ? "/" : `/${item.toLowerCase()}`}
                     className={({ isActive }) =>
                       isActive
@@ -88,10 +88,10 @@ function Header() {
             </div>
           </Col>
 
-          <Nav.Link className="ms-2">
+          <Nav.Link className="ms-3">
             <AiOutlineHeart className="fs-4" />
           </Nav.Link>
-          <Nav.Link className="mx-2 cart-icon">
+          <Nav.Link className="mx-3 cart-icon">
             <AiOutlineShoppingCart className="fs-4" />
             <span className="cart-badge ">3</span>
           </Nav.Link>
