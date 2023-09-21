@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
+// import { BiUser } from "react-icons/bi";
 import "./Header.scss";
+import { AvatarDropdown } from "./components";
 
 function Header() {
   const NavBarItem = ["Home", "Contact", "About", "Sign-Up"];
@@ -43,49 +45,57 @@ function Header() {
       {/* Header Bottom */}
       <Navbar expand="lg" className="bg-white">
         <Container>
-          <Navbar.Brand href="#home" className="fw-bold fs-4">
-            Exclusive
-          </Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-6 nav-link">
-              {NavBarItem.map((item) => (
-                <NavLink
-                  key={item}
-                  to={item == "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "active px-4 mx-1 nav-item"
-                      : "px-4 mx-1 nav-item"
-                  }
+          <Col>
+            <Navbar.Brand href="#home" className="fw-bold fs-4">
+              Exclusive
+            </Navbar.Brand>
+          </Col>
+          <Col md="5">
+            <Navbar.Collapse>
+              <Nav className="nav-link">
+                {NavBarItem.map((item) => (
+                  <NavLink
+                    key={item}
+                    to={item == "Home" ? "/" : `/${item.toLowerCase()}`}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "active px-4 mx-1 nav-item"
+                        : "px-4 mx-1 nav-item"
+                    }
+                  >
+                    {item}
+                  </NavLink>
+                ))}
+              </Nav>
+            </Navbar.Collapse>
+          </Col>
+          <Col>
+            <div className="input-group mx-auto">
+              <input
+                className="form-control border-end-0 border bg-light"
+                type="search"
+                id="example-search-input"
+                placeholder="What are looking for?"
+              />
+              <span className="input-group-append">
+                <button
+                  className="btn btn-outline-secondary border-start-0 border rounded-0 rounded-end bg-light"
+                  type="button"
                 >
-                  {item}
-                </NavLink>
-              ))}
-            </Nav>
-          </Navbar.Collapse>
-          <div className="input-group" style={{ width: "300px" }}>
-            <input
-              className="form-control border-end-0 border bg-light"
-              type="search"
-              id="example-search-input"
-              placeholder="What are looking for?"
-            />
-            <span className="input-group-append">
-              <button
-                className="btn btn-outline-secondary border-start-0 border rounded-0 rounded-end bg-light"
-                type="button"
-              >
-                <FontAwesomeIcon icon={faSearch} />
-              </button>
-            </span>
-          </div>
-          <Nav.Link className="mx-3">
+                  <FontAwesomeIcon icon={faSearch} />
+                </button>
+              </span>
+            </div>
+          </Col>
+
+          <Nav.Link className="ms-2">
             <AiOutlineHeart className="fs-4" />
           </Nav.Link>
-          <Nav.Link className="mx-3 cart-icon">
+          <Nav.Link className="mx-2 cart-icon">
             <AiOutlineShoppingCart className="fs-4" />
-            <span className="cart-badge">3</span>
+            <span className="cart-badge ">3</span>
           </Nav.Link>
+          <AvatarDropdown />
         </Container>
       </Navbar>
     </>
