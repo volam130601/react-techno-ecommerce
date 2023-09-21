@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import "./Header.scss";
 
 function Header() {
-  const NavBarItem = ["Home", "Contact", "About", "Sign Up"];
+  const NavBarItem = ["Home", "Contact", "About", "Sign-Up"];
 
   return (
     <>
@@ -65,13 +65,14 @@ function Header() {
           </Navbar.Collapse>
           <div className="input-group" style={{ width: "300px" }}>
             <input
-              className="form-control border-end-0 border"
+              className="form-control border-end-0 border bg-light"
               type="search"
               id="example-search-input"
+              placeholder="What are looking for?"
             />
             <span className="input-group-append">
               <button
-                className="btn btn-outline-secondary border-start-0 border rounded-0 rounded-end"
+                className="btn btn-outline-secondary border-start-0 border rounded-0 rounded-end bg-light"
                 type="button"
               >
                 <FontAwesomeIcon icon={faSearch} />

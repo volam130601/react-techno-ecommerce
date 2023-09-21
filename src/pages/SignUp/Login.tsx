@@ -1,8 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Footer } from "../../components";
-import { FormSignUp } from "./components";
-
-const SignUp = () => {
+import { FormLogin } from "./components";
+const Login = () => {
   return (
     <>
       <Container fluid className="my-5">
@@ -14,7 +13,7 @@ const SignUp = () => {
             />
           </Col>
           <Col className="mx-5">
-            <FormSignUp />
+            <FormLogin />
           </Col>
         </Row>
       </Container>
@@ -23,4 +22,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
