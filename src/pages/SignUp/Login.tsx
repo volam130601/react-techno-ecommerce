@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Footer } from "../../components";
 import { FormLogin } from "./components";
 const Login = () => {
   return (
@@ -17,7 +16,6 @@ const Login = () => {
           </Col>
         </Row>
       </Container>
-      <Footer isListIcon={false} />
     </>
   );
 };

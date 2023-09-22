@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Sidebar, Carousels, FlashSale, Categories } from "./sections";
 import "./Home.scss";
 import BestSellProduct from "./sections/BestSellProduct/BestSellProduct";
-import { Footer } from "../../components";
+import { FooterListIcon } from "../../components";
 const Home = () => {
   return (
     <>
@@ -25,7 +25,7 @@ const Home = () => {
           <BestSellProduct />
         </Row>
       </Container>
-      <Footer isListIcon />
+      <FooterListIcon />
     </>
   );
 };

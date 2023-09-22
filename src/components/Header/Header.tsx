@@ -43,7 +43,7 @@ function Header() {
         </Col>
       </Row>
       {/* Header Bottom */}
-      <Navbar expand="lg" className="bg-white">
+      <Navbar expand="lg" className="bg-white border-bottom">
         <Container>
           <Col>
             <Navbar.Brand href="#home" className="fw-bold fs-4">
@@ -88,13 +88,14 @@ function Header() {
             </div>
           </Col>
 
-          <Nav.Link className="ms-3">
-            <AiOutlineHeart className="fs-4" />
-          </Nav.Link>
-          <Nav.Link className="mx-3 cart-icon">
+          <NavLink to={"/wishlist"} className="ms-3 text-black btn-icon">
+            <AiOutlineHeart className="fs-4 " />
+            <span className="btn-badge">4</span>
+          </NavLink>
+          <NavLink to={"/cart"} className="mx-3 text-black btn-icon">
             <AiOutlineShoppingCart className="fs-4" />
-            <span className="cart-badge ">3</span>
-          </Nav.Link>
+            <span className="btn-badge ">3</span>
+          </NavLink>
           <AvatarDropdown />
         </Container>
       </Navbar>

@@ -21,10 +21,10 @@ const BestSellProduct = () => {
         </Row>
         <Row className="my-5">
           <div className="b-custom-card d-flex justify-content-between">
-            <CustomCard isBadgeDiscount={false} />
-            <CustomCard isBadgeDiscount={false} />
-            <CustomCard isBadgeDiscount={false} />
-            <CustomCard isBadgeDiscount={false} />
+            <CustomCard />
+            <CustomCard />
+            <CustomCard />
+            <CustomCard />
           </div>
         </Row>
       </Container>

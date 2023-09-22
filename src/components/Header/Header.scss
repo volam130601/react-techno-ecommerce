@@ -24,13 +24,16 @@
   color: #ffffff;
 }
 
-.cart-icon {
+.btn-icon {
   position: relative;
-  display: inline-block;
   cursor: pointer;
+
+  &:hover {
+    color: $primary-color !important;
+  }
 }
 
-.cart-badge {
+.btn-badge {
   position: absolute;
   top: -8px;
   right: -8px;

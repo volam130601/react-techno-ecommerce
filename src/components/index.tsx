@@ -2,4 +2,5 @@ import Header from "./Header/Header";
 
 import Footer from "./Footer/Footer";
 
-export { Header, Footer };
+import FooterListIcon from "./Footer/FooterListIcon";
+export { Header, Footer, FooterListIcon };
