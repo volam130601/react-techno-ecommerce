@@ -1,0 +1,8 @@
+@import "/src/common-scss/common-styles.scss";
+
+.custom-breadcrumbs {
+  a {
+    text-decoration: none !important;
+    color: $gray-color;
+  }
+}

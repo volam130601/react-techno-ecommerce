@@ -1,7 +1,16 @@
 import { Footer, Header } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { About, Cart, Contact, Home, SignUp, Wishlist } from "./pages";
-import Login from "./pages/SignUp/Login";
+import {
+  About,
+  Cart,
+  Checkout,
+  Contact,
+  Home,
+  SignUp,
+  Login,
+  Wishlist,
+} from "./pages";
+
 function App() {
   return (
     <>
@@ -15,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
       <Footer />

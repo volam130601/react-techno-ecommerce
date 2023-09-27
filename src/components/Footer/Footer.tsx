@@ -13,7 +13,7 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <>
-      <Container fluid className="bg-dark text-white mt-5">
+      <Container fluid className="bg-dark text-white mt-9">
         <Row className="p-5">
           <Col>
             <div className="fs-4 fw-bold mb-3">Exclusive</div>

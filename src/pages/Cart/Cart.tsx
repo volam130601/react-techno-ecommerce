@@ -7,16 +7,17 @@ import {
   Button,
   FormControl,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./Cart.scss";
+import { Breadcrumbs } from "../../components";
+const ListBreadcrumbs = [
+  { link: "/", title: "Home" },
+  { link: "", title: "Cart" },
+];
 const Cart = () => {
   return (
     <>
-      <Container className="my-5">
-        <div className="d-flex">
-          <div className="">Home</div>
-          <div className="mx-2">/</div>
-          <div className="fw-bold">Cart</div>
-        </div>
-      </Container>
+      <Breadcrumbs data={ListBreadcrumbs} />
       <Container>
         <Row className="p-3 border shadow-sm fw-bold">
           <Col md={4}>Product</Col>
@@ -132,9 +133,11 @@ const Cart = () => {
               <b className="ms-auto">$1750</b>
             </div>
             <div className="d-flex justify-content-center mt-3">
-              <Button className="border-0 bg-primary-2 py-2 px-5">
-                Process to checkout
-              </Button>
+              <Link to="/checkout">
+                <Button className="border-0 bg-primary-2 py-2 px-5">
+                  Process to checkout
+                </Button>
+              </Link>
             </div>
           </Col>
         </Row>
