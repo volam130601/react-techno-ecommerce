@@ -1,7 +1,8 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./FlashSale.scss";
 import { CardSlider } from "../../components";
 import Time from "./Time";
+import { Button } from "../../../../components";
 
 const FlashSale = () => {
   return (
@@ -23,7 +24,7 @@ const FlashSale = () => {
         <div className="mt-4"></div>
         <CardSlider />
         <div className="d-flex justify-content-center">
-          <Button variant="danger px-5 py-2">View All Products</Button>
+          <Button title="View All Products"></Button>
         </div>
       </Container>
     </>

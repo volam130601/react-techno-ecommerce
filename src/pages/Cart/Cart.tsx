@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button,
-  FormControl,
-} from "react-bootstrap";
+import { Container, Row, Col, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Cart.scss";
-import { Breadcrumbs } from "../../components";
+import { Breadcrumbs, Button } from "../../components";
 const ListBreadcrumbs = [
   { link: "/", title: "Home" },
   { link: "", title: "Cart" },
@@ -47,7 +40,7 @@ const Cart = () => {
             </Form>
           </Col>
           <Col md={3} className="d-flex justify-content-end">
-            Subtotal
+            $1750
           </Col>
         </Row>
         <Row className="p-3 border shadow-sm mt-3">
@@ -70,25 +63,15 @@ const Cart = () => {
             </Form>
           </Col>
           <Col md={3} className="d-flex justify-content-end">
-            Subtotal
+            $1750
           </Col>
         </Row>
         <Row className="mt-3">
           <Col me={"auto"} className="p-0">
-            <Button
-              variant="outline-secondary"
-              className="px-5 py-2 text-black fw-bold"
-            >
-              Rerun To Shop
-            </Button>
+            <Button title=" Rerun To Shop" isOutline={true} />
           </Col>
           <Col className="d-flex justify-content-end p-0">
-            <Button
-              variant="outline-secondary"
-              className="px-5 py-2 text-black fw-bold"
-            >
-              Update Cart
-            </Button>
+            <Button title="Update Cart" isOutline={true} />
           </Col>
         </Row>
       </Container>
@@ -107,13 +90,8 @@ const Cart = () => {
                     className="py-2"
                   />
                 </Form.Group>
-                <Button
-                  className="bg-primary-2 border-0 fs-6 py-2"
-                  style={{ width: "380px" }}
-                  type="submit"
-                >
-                  Apply Coupon
-                </Button>
+
+                <Button title="Apply Coupon" />
               </Form>
             </Row>
           </Col>
@@ -134,9 +112,7 @@ const Cart = () => {
             </div>
             <div className="d-flex justify-content-center mt-3">
               <Link to="/checkout">
-                <Button className="border-0 bg-primary-2 py-2 px-5">
-                  Process to checkout
-                </Button>
+                <Button title="Process to checkout" />
               </Link>
             </div>
           </Col>

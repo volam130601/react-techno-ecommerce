@@ -1,6 +1,7 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./BestSellProduct.scss";
 import { CustomCard } from "../../components";
+import { Button } from "../../../../components";
 
 const BestSellProduct = () => {
   return (
@@ -16,7 +17,7 @@ const BestSellProduct = () => {
           </Col>
 
           <Col md={3} className="d-flex justify-content-end">
-            <Button variant="danger px-4 py-2">View All</Button>
+            <Button title="View All"></Button>
           </Col>
         </Row>
         <Row className="my-5">

@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-import { Breadcrumbs } from "../../components";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Breadcrumbs, Button } from "../../components";
+import { Container, Row, Col, Form, FormControl } from "react-bootstrap";
 
 const ListBreadcrumbs = [
   { link: "/account", title: "Account" },
@@ -184,20 +177,11 @@ const Checkout = () => {
                   className="py-2"
                 />
               </Form.Group>
-              <Button
-                className="bg-primary-2 border-0 fs-6 py-2"
-                style={{ width: "380px" }}
-                type="submit"
-              >
-                Apply Coupon
-              </Button>
+              <Button title="Apply Coupon" />
             </Form>
-            <Button
-              className="bg-primary-2 border-0 fs-6 py-2 px-5 mt-4"
-              type="submit"
-            >
-              Place Order
-            </Button>
+            <div className="mt-4">
+              <Button title="Place Order" />
+            </div>
           </Col>
         </Row>
       </Container>
