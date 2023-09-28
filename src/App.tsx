@@ -10,6 +10,7 @@ import {
   Login,
   Wishlist,
 } from "./pages";
+import { AddressBook, MyProfile } from "./pages/Account";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/account/my-profile" element={<MyProfile />} />
+          <Route path="/account/address-book" element={<AddressBook />} />
         </Routes>
       </Router>
       <Footer />

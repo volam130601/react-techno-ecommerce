@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
-// import { BiUser } from "react-icons/bi";
 import "./Header.scss";
 import { AvatarDropdown } from "./components";
 
@@ -13,35 +12,39 @@ function Header() {
   return (
     <>
       {/* Header Top */}
-      <Row className="d-flex justify-content-center items-center bg-black text-white">
-        <Col xs={3}></Col>
-        <Col xs={6}>
-          <div className="m-2 d-flex justify-content-center">
-            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <a href="" className="fw-bold text-white ps-1">
-              ShopNow
-            </a>
-          </div>
-        </Col>
-        <Col
-          xs={3}
-          className="d-flex justify-content-center items-center align-items-center"
-        >
-          <Dropdown>
-            <Dropdown.Toggle
-              variant="none"
-              className="text-white"
-              id="dropdown-basic"
-            >
-              English
-            </Dropdown.Toggle>
+      <Container fluid>
+        <Row className="d-flex justify-content-center items-center bg-black text-white">
+          <Col xs={3}></Col>
+          <Col xs={6}>
+            <div className="m-2 d-flex justify-content-center">
+              Summer Sale For All Swim Suits And Free Express Delivery - OFF
+              50%!
+              <a href="" className="fw-bold text-white ps-1">
+                ShopNow
+              </a>
+            </div>
+          </Col>
+          <Col
+            xs={3}
+            className="d-flex justify-content-center items-center align-items-center"
+          >
+            <Dropdown>
+              <Dropdown.Toggle
+                variant="none"
+                className="text-white"
+                id="dropdown-basic"
+              >
+                English
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Viet Nam</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Col>
-      </Row>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Viet Nam</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+        </Row>
+      </Container>
+
       {/* Header Bottom */}
       <Navbar expand="lg" className="bg-white border-bottom">
         <Container>

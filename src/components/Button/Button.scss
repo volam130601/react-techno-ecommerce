@@ -21,3 +21,14 @@
     border: 0;
   }
 }
+
+.btn-common-text {
+  background-color: white;
+  color: black;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  &:hover {
+    color: #db4444;
+    border: 1px solid #db4444;
+  }
+}

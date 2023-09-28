@@ -15,8 +15,6 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ data }) => {
-  console.log(data);
-
   return (
     <>
       <Container>

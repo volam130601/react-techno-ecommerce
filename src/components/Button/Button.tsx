@@ -5,13 +5,24 @@ interface ButtonProps {
   title: string;
   isOutline?: boolean;
   isCircle?: boolean;
+  isTextButton?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, isOutline = false }) => {
+const Button: React.FC<ButtonProps> = ({
+  title,
+  isOutline = false,
+  isTextButton = false,
+}) => {
   return (
     <>
       <button
-        className={isOutline ? "btn-common-outline p-2" : "btn-common p-2"}
+        className={`p-2 ${
+          isOutline
+            ? "btn-common-outline"
+            : isTextButton
+            ? "btn-common-text"
+            : "btn-common"
+        }`}
         type="submit"
       >
         {title}

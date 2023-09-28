@@ -5,7 +5,7 @@ import { BiLogOut, BiUser } from "react-icons/bi";
 import { BsBoxSeam } from "react-icons/bs";
 import { MdOutlineCancel } from "react-icons/md";
 import "./AvatarDropdown.scss";
-
+import { Link } from "react-router-dom";
 interface User {
   name: string;
 }
@@ -31,7 +31,11 @@ function AvatarDropdown() {
         )}
       </Dropdown.Toggle>
       <Dropdown.Menu align={"end"} className="custom-dropdown-menu">
-        <Dropdown.Item href="#" className="d-flex align-items-center">
+        <Dropdown.Item
+          as={Link}
+          to="/account/my-profile"
+          className="d-flex align-items-center"
+        >
           <BiUser />
           <div className="ms-2">Manage My Account</div>
         </Dropdown.Item>

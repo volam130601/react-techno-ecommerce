@@ -1,0 +1,19 @@
+@import "/src/common-scss/common-styles.scss";
+.sub-nav-list {
+  list-style-type: none !important;
+
+  .active {
+    color: $primary-color !important;
+    transform: none !important;
+    font-weight: bold !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  li {
+    &:hover {
+      color: $primary-color !important;
+      cursor: pointer;
+    }
+  }
+}
