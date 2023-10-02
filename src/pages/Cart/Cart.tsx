@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col, Form, FormControl } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./Cart.scss";
 import { Breadcrumbs, Button } from "../../components";
 const ListBreadcrumbs = [
@@ -67,10 +66,11 @@ const Cart = () => {
           </Col>
         </Row>
         <Row className="mt-3">
-          <Col me={"auto"} className="p-0">
+          <Col md={3} className="p-0">
             <Button title=" Rerun To Shop" isOutline={true} />
           </Col>
-          <Col className="d-flex justify-content-end p-0">
+          <Col me={"auto"}></Col>
+          <Col md={3} className="d-flex justify-content-end p-0">
             <Button title="Update Cart" isOutline={true} />
           </Col>
         </Row>
@@ -111,9 +111,7 @@ const Cart = () => {
               <b className="ms-auto">$1750</b>
             </div>
             <div className="d-flex justify-content-center mt-3">
-              <Link to="/checkout">
-                <Button title="Process to checkout" />
-              </Link>
+              <Button title="Process to checkout" link="/checkout" />
             </div>
           </Col>
         </Row>
