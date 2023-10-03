@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./CardSlider.scss";
-import CustomCard from "./CustomCard";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { CustomCard } from "../../../components";
 interface CardData {
   title: string;
 }
@@ -11,17 +11,15 @@ const cardData: CardData[] = [
   { title: "Card 2" },
   { title: "Card 3" },
   { title: "Card 4" },
-  { title: "Card 4" },
-  { title: "Card 4" },
-  { title: "Card 4" },
-  { title: "Card 4" },
+  { title: "Card 5" },
+  { title: "Card 6" },
+  { title: "Card 7" },
+  { title: "Card 8" },
   // Add more card data as needed
 ];
 
 function CardSlider() {
   const [, setScrollLeft] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStartXRef = useRef(0);
   const cardContainerRef = useRef<HTMLDivElement | null>(null);
 
   const handlePrev = () => {
@@ -38,40 +36,16 @@ function CardSlider() {
     }
   };
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    dragStartXRef.current = e.clientX;
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-
-    const dragDeltaX = e.clientX - dragStartXRef.current;
-    if (cardContainerRef.current) {
-      cardContainerRef.current.scrollLeft -= dragDeltaX;
-      dragStartXRef.current = e.clientX;
-      setScrollLeft(cardContainerRef.current.scrollLeft);
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
   return (
-    <div
-      className={`card-slider ${isDragging ? "dragging" : ""}`}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    >
-      <div
-        className="cards-container"
-        ref={cardContainerRef}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-      >
+    <div className={`card-slider`}>
+      <div className="cards-container" ref={cardContainerRef}>
         {cardData.map((card, index) => (
-          <CustomCard key={index} isBadgeDiscount={true} />
+          <CustomCard
+            link={`/product/${index}`}
+            key={index}
+            isBadgeDiscount={true}
+            title={card.title}
+          />
         ))}
       </div>
       <div className="d-flex slider-arrow">

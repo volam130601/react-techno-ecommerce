@@ -1,0 +1,20 @@
+@import "/src/common-scss/common-styles.scss";
+.radio-size {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  background-color: white;
+  margin: 0 6px;
+  padding: 2px;
+  border: 1px solid #000;
+  .radio-size-child {
+    display: block;
+    height: 50px;
+  }
+}
+.radio-size.active {
+  background-color: $primary-color;
+  color: white;
+  border: 0;
+}

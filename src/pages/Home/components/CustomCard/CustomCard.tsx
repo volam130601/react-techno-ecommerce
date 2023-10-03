@@ -1,16 +1,20 @@
 import { AiOutlineHeart, AiOutlineEye, AiFillStar } from "react-icons/ai";
 import "./CustomCard.scss";
 import { BsTrash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 interface CustomCardProps {
   title?: string;
   isBadgeDiscount?: boolean;
   isRemoveCard?: boolean;
+  link?: string;
 }
 
 const CustomCard: React.FC<CustomCardProps> = ({
   isBadgeDiscount = true,
   isRemoveCard = false,
+  link = "",
+  title = "",
 }) => {
   return (
     <div className="custom-card me-4">
@@ -28,9 +32,11 @@ const CustomCard: React.FC<CustomCardProps> = ({
             <button className="btn-icon">
               <AiOutlineHeart />
             </button>
-            <button className="btn-icon mt-2">
-              <AiOutlineEye />
-            </button>
+            <Link to={link}>
+              <button className="btn-icon mt-2">
+                <AiOutlineEye />
+              </button>
+            </Link>
           </div>
         ) : (
           <div className="d-flex flex-column btn-card justify-content-center align-items-center">
@@ -42,9 +48,10 @@ const CustomCard: React.FC<CustomCardProps> = ({
 
         <div className="add-to-cart">Add to cart</div>
       </div>
+
       <div className="custom-card-body mt-3">
         <div className="title-container">
-          <h5 className="title">HAVIT HV-G92 Gamepad</h5>
+          <h5 className="title">{title}</h5>
         </div>
         <div className="d-flex my-2">
           <p className="text-primary-2 fw-bold m-0">$120</p>

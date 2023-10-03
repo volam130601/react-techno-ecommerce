@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "./FlashSale.scss";
-import { CardSlider } from "../../components";
 import Time from "./Time";
 import { Button } from "../../../../components";
+import CardSlider from "./CardSlider/CardSlider";
 
 const FlashSale = () => {
   return (

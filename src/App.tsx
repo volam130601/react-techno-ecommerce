@@ -10,6 +10,7 @@ import {
   Login,
   Wishlist,
   Error404,
+  Product,
 } from "./pages";
 import { AddressBook, MyProfile } from "./pages/Account";
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/account/my-profile" element={<MyProfile />} />
           <Route path="/account/address-book" element={<AddressBook />} />
           <Route path="/error-404" element={<Error404 />} />
+          <Route path="/product/:id" element={<Product />} />
         </Routes>
       </Router>
       <Footer />

@@ -3,7 +3,7 @@
   color: white;
   border: 0;
   border-radius: 4px;
-  min-width: 250px;
+  min-width: 200px;
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
 .btn-common-outline {
   background-color: white;
   border-radius: 4px;
-  min-width: 250px;
+  min-width: 200px;
   text-decoration: none;
   border: 1px solid black;
   display: flex;
@@ -33,9 +33,6 @@
   color: black;
   border: 1px solid transparent;
   border-radius: 4px;
-  // text-decoration: none;
-  // display: flex;
-  // justify-content: center;
   &:hover {
     color: #db4444;
     border: 1px solid #db4444;
