@@ -5,8 +5,13 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import "./Header.scss";
 import { AvatarDropdown } from "./components";
+import { Product } from "../../entity";
 
-function Header() {
+interface HeaderProps {
+  cartItems: Product[];
+}
+
+const Header: React.FC<HeaderProps> = ({ cartItems }) => {
   const NavBarItem = ["Home", "Contact", "About", "Sign-Up"];
 
   return (
@@ -97,13 +102,15 @@ function Header() {
           </NavLink>
           <NavLink to={"/cart"} className="mx-3 text-black btn-icon">
             <AiOutlineShoppingCart className="fs-4" />
-            <span className="btn-badge ">3</span>
+            {cartItems.length > 0 && (
+              <span className="btn-badge ">{cartItems.length}</span>
+            )}
           </NavLink>
           <AvatarDropdown />
         </Container>
       </Navbar>
     </>
   );
-}
+};
 
 export default Header;

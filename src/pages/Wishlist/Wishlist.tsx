@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { CustomCard } from "../Home/components";
+import { Card } from "../../components";
 
 const Wishlist = () => {
   return (
@@ -18,10 +18,10 @@ const Wishlist = () => {
         </Row>
         <Row className="my-5">
           <div className="b-custom-card d-flex justify-content-between">
-            <CustomCard isRemoveCard={true} />
-            <CustomCard isRemoveCard={true} />
-            <CustomCard isRemoveCard={true} />
-            <CustomCard isRemoveCard={true} />
+            <Card isRemoveCard={true} />
+            <Card isRemoveCard={true} />
+            <Card isRemoveCard={true} />
+            <Card isRemoveCard={true} />
           </div>
         </Row>
       </Container>

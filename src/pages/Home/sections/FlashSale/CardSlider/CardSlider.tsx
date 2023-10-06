@@ -1,24 +1,14 @@
 import React, { useRef, useState } from "react";
 import "./CardSlider.scss";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { CustomCard } from "../../../components";
-interface CardData {
-  title: string;
+import { Card } from "../../../../../components";
+import { CartEntity, dataProducts } from "../../../../../entity";
+
+interface CardSliderProps {
+  onAddToCart: (cartItem: CartEntity) => void;
 }
 
-const cardData: CardData[] = [
-  { title: "Card 1" },
-  { title: "Card 2" },
-  { title: "Card 3" },
-  { title: "Card 4" },
-  { title: "Card 5" },
-  { title: "Card 6" },
-  { title: "Card 7" },
-  { title: "Card 8" },
-  // Add more card data as needed
-];
-
-function CardSlider() {
+const CardSlider: React.FC<CardSliderProps> = ({ onAddToCart }) => {
   const [, setScrollLeft] = useState(0);
   const cardContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,12 +29,12 @@ function CardSlider() {
   return (
     <div className={`card-slider`}>
       <div className="cards-container" ref={cardContainerRef}>
-        {cardData.map((card, index) => (
-          <CustomCard
+        {dataProducts.map((product, index) => (
+          <Card
+            onAddToCart={onAddToCart}
             link={`/product/${index}`}
-            key={index}
-            isBadgeDiscount={true}
-            title={card.title}
+            key={product.id}
+            product={product}
           />
         ))}
       </div>
@@ -58,6 +48,6 @@ function CardSlider() {
       </div>
     </div>
   );
-}
+};
 
 export default CardSlider;

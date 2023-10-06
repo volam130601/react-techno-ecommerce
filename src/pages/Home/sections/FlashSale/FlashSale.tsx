@@ -3,8 +3,13 @@ import "./FlashSale.scss";
 import Time from "./Time";
 import { Button } from "../../../../components";
 import CardSlider from "./CardSlider/CardSlider";
+import { CartEntity } from "../../../../entity";
 
-const FlashSale = () => {
+interface FlashSaleProps {
+  onAddToCart: (cartItem: CartEntity) => void;
+}
+
+const FlashSale: React.FC<FlashSaleProps> = ({ onAddToCart }) => {
   return (
     <>
       <Container>
@@ -22,7 +27,7 @@ const FlashSale = () => {
           <Col md={3}></Col>
         </Row>
         <div className="mt-4"></div>
-        <CardSlider />
+        <CardSlider onAddToCart={onAddToCart} />
         <div className="d-flex justify-content-center">
           <Button title="View All Products"></Button>
         </div>

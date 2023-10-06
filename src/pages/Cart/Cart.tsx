@@ -1,12 +1,45 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Container, Row, Col, Form, FormControl } from "react-bootstrap";
 import "./Cart.scss";
 import { Breadcrumbs, Button } from "../../components";
+import { Product } from "../../entity";
 const ListBreadcrumbs = [
   { link: "/", title: "Home" },
   { link: "", title: "Cart" },
 ];
-const Cart = () => {
+
+interface CartProps {
+  cartItems: Product[];
+}
+
+const Cart: React.FC<CartProps> = ({ cartItems }) => {
+  const [itemQuantities, setItemQuantities] = useState<{
+    [key: string]: number;
+  }>({});
+
+  const handleQuantityChange = (
+    productId: string,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const newQuantity = parseInt(event.target.value, 10) || 1;
+    setItemQuantities({
+      ...itemQuantities,
+      [productId]: newQuantity,
+    });
+  };
+
+  const getSubtotal = (item: Product) => {
+    const quantity = itemQuantities[item.id] || 1;
+    return item.price * quantity;
+  };
+
+  const getTotalSubtotal = () => {
+    const total = cartItems.reduce((acc, item) => {
+      return acc + getSubtotal(item);
+    }, 0);
+    return total.toFixed(1);
+  };
+
   return (
     <>
       <Breadcrumbs data={ListBreadcrumbs} />
@@ -19,52 +52,39 @@ const Cart = () => {
             Subtotal
           </Col>
         </Row>
-        <Row className="p-3 border shadow-sm mt-3">
-          <Col md={4}>
-            <img
-              src="https://images.philips.com/is/image/PhilipsConsumer/243B1_00-IMS-en_GB?$jpglarge$&wid=960"
-              alt=""
-              width={70}
-              height={70}
-              className="me-2"
-            />
-            LCD Monitor
-          </Col>
-          <Col md={3}>$650</Col>
-          <Col md={2}>
-            <Form className="">
-              <Form.Group controlId="quantity">
-                <Form.Control type="number" placeholder="Enter quantity" />
-              </Form.Group>
-            </Form>
-          </Col>
-          <Col md={3} className="d-flex justify-content-end">
-            $1750
-          </Col>
-        </Row>
-        <Row className="p-3 border shadow-sm mt-3">
-          <Col md={4}>
-            <img
-              src="https://images.philips.com/is/image/PhilipsConsumer/243B1_00-IMS-en_GB?$jpglarge$&wid=960"
-              alt=""
-              width={70}
-              height={70}
-              className="me-2"
-            />
-            LCD Monitor
-          </Col>
-          <Col md={3}>$650</Col>
-          <Col md={2}>
-            <Form className="">
-              <Form.Group controlId="quantity">
-                <Form.Control type="number" placeholder="Enter quantity" />
-              </Form.Group>
-            </Form>
-          </Col>
-          <Col md={3} className="d-flex justify-content-end">
-            $1750
-          </Col>
-        </Row>
+        {cartItems &&
+          cartItems.map((item, index) => (
+            <Row key={index} className="p-3 border shadow-sm mt-3">
+              <Col md={4}>
+                <img
+                  src={`${item.picture}`}
+                  alt={item.title}
+                  width={70}
+                  height={70}
+                  className="me-2"
+                />
+                {item.title}
+              </Col>
+              <Col md={3}>${item.price}</Col>
+              <Col md={2}>
+                <Form>
+                  <Form.Group controlId={`quantity-${item.id}`}>
+                    <Form.Control
+                      type="number"
+                      placeholder="Enter quantity"
+                      value={itemQuantities[item.id] || 1}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        handleQuantityChange(item.id, e)
+                      }
+                    />
+                  </Form.Group>
+                </Form>
+              </Col>
+              <Col md={3} className="d-flex justify-content-end">
+                ${getSubtotal(item).toFixed(2)}
+              </Col>
+            </Row>
+          ))}
         <Row className="mt-3">
           <Col md={3} className="p-0">
             <Button title=" Rerun To Shop" isOutline={true} />
@@ -100,7 +120,7 @@ const Cart = () => {
             <h5>Cart Total</h5>
             <div className="d-flex border-bottom  pb-3 mt-4">
               <div className="">Subtotal:</div>
-              <b className="ms-auto">$1750</b>
+              <b className="ms-auto">${getTotalSubtotal()}</b>
             </div>
             <div className="d-flex border-bottom  pb-3 mt-4">
               <div className="">Shipping:</div>
@@ -108,7 +128,7 @@ const Cart = () => {
             </div>
             <div className="d-flex pb-3 mt-4">
               <div className="">Total:</div>
-              <b className="ms-auto">$1750</b>
+              <b className="ms-auto">${getTotalSubtotal()}</b>
             </div>
             <div className="d-flex justify-content-center mt-3">
               <Button title="Process to checkout" link="/checkout" />

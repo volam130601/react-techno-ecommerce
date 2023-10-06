@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import { CustomCard } from "../../../Home/components";
+import { Card } from "../../../../components";
 
 const RelatedItem = () => {
   return (
@@ -11,10 +11,10 @@ const RelatedItem = () => {
       </div>
       <Row className="my-5">
         <div className="b-custom-card d-flex justify-content-between">
-          <CustomCard link={`/product/0`} title="Title 1" />
-          <CustomCard link={`/product/0`} title="Title 1" />
-          <CustomCard link={`/product/0`} title="Title 1" />
-          <CustomCard link={`/product/0`} title="Title 1" />
+          <Card link={`/product/0`} title="Title 1" />
+          <Card link={`/product/0`} title="Title 1" />
+          <Card link={`/product/0`} title="Title 1" />
+          <Card link={`/product/0`} title="Title 1" />
         </div>
       </Row>
     </Container>

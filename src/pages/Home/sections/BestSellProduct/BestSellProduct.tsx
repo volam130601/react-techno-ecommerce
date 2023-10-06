@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "./BestSellProduct.scss";
-import { CustomCard } from "../../components";
-import { Button } from "../../../../components";
+import { Button, Card } from "../../../../components";
 
 const BestSellProduct = () => {
   return (
@@ -22,10 +21,10 @@ const BestSellProduct = () => {
         </Row>
         <Row className="my-5">
           <div className="b-custom-card d-flex justify-content-between">
-            <CustomCard link={`/product/0`} />
-            <CustomCard link={`/product/0`} />
-            <CustomCard link={`/product/0`} />
-            <CustomCard link={`/product/0`} />
+            <Card link={`/product/0`} />
+            <Card link={`/product/0`} />
+            <Card link={`/product/0`} />
+            <Card link={`/product/0`} />
           </div>
         </Row>
       </Container>

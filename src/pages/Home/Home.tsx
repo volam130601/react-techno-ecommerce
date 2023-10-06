@@ -3,7 +3,12 @@ import { Sidebar, Carousels, FlashSale, Categories } from "./sections";
 import "./Home.scss";
 import BestSellProduct from "./sections/BestSellProduct/BestSellProduct";
 import { FooterListIcon } from "../../components";
-const Home = () => {
+import { CartEntity } from "../../entity";
+
+interface HomeProps {
+  onAddToCart: (cartItem: CartEntity) => void;
+}
+const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
   return (
     <>
       <Container>
@@ -16,7 +21,7 @@ const Home = () => {
           </Col>
         </Row>
         <Row className="mt-6">
-          <FlashSale />
+          <FlashSale onAddToCart={onAddToCart} />
         </Row>
         <Row className="mt-6">
           <Categories />
