@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Breadcrumbs } from "../../components";
-import { Sidebar } from "./components";
+import { Sidebar } from "./sections";
 
 const ListBreadcrumbs = [
   { link: "/", title: "Home" },

@@ -1,16 +1,16 @@
 import { AiOutlineHeart, AiOutlineEye, AiFillStar } from "react-icons/ai";
-import "./CustomCard.scss";
+import "./Card.scss";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-interface CustomCardProps {
+interface CardProps {
   title?: string;
   isBadgeDiscount?: boolean;
   isRemoveCard?: boolean;
   link?: string;
 }
 
-const CustomCard: React.FC<CustomCardProps> = ({
+const Card: React.FC<CardProps> = ({
   isBadgeDiscount = true,
   isRemoveCard = false,
   link = "",
@@ -74,4 +74,4 @@ const CustomCard: React.FC<CustomCardProps> = ({
   );
 };
 
-export default CustomCard;
+export default Card;

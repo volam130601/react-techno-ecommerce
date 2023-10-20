@@ -1,7 +1,7 @@
 import { Container, Row, Col, Form, FormControl } from "react-bootstrap";
 
 import { Breadcrumbs, Button } from "../../components";
-import { Sidebar } from "./components";
+import { Sidebar } from "./sections";
 
 const ListBreadcrumbs = [
   { link: "/", title: "Home" },

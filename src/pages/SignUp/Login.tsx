@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { FormLogin } from "./components";
+import { FormLogin } from "./sections";
 const Login = () => {
   return (
     <>
